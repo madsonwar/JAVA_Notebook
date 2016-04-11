@@ -1,8 +1,14 @@
 package br.ufpa.cbcc.Notebook;
 
-public abstract class Device {
-	public static void main(String[] args) {
-		System.out.println("Olá Mundo!");
-	}
-
+public interface Device {
+	
+	
+	public abstract void ligarDesligar();
+	public abstract void aumentarVolume();
+	public abstract void aumentarVolume(int mais);
+	public abstract void diminurVolume(int menos);
+	public abstract void diminuirVolume();
+	public abstract void printfMarca();
+	
+	
 }
