@@ -10,13 +10,39 @@ public abstract class Computador implements Device{
 	public abstract void executarPrograma();
 	public abstract void printfVersaoDaBios();
 	
+	Computador(){
+		marca = "desconhecido";
+		programa = "desconhecido";
+		ligado = false;
+		volume = 0;
+		
+	}
+	
+	Computador(String marc, String prog, boolean onoff, int vol){
+		marca = marc;
+		programa = prog;
+		ligado = onoff;
+		volume = vol;
+		
+	}
 	
 	public  void aumentarVolume(){
 		volume +=1;
 		System.out.println("O volume foi aumentado:"+volume);
 	}
 	
-	
+	public void ligarDesligar(){
+		if(ligado == true){
+			ligado = false;
+			System.out.println("O aparelho foi desligado!!");
+		}
+		else {
+			ligado = true;
+			System.out.println("O aparelho foi ligado!!");
+		
+			
+		}
+	}
 	
 	
 	public int getVersaoDaBios() {
