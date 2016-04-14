@@ -5,8 +5,10 @@ public static void main(String[] args){
   ComputadorPessoal Hp = new ComputadorPessoal("Hp", "Avast", false, 100,"Mozila");
   
   computadorpessoal.ligarDesligar();
-  hp.getMarca();
-  computadorpessoal.aumentarVolume(50);
+  Hp.getMarca();
+  computadorpessoal.aumentarVolume(5);
+  computadorpessoal.aumentarVolume(10);
+  
   computadorpessoal.getVolume();
   
   
