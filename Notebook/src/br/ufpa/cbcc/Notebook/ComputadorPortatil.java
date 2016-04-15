@@ -5,17 +5,18 @@ public abstract class ComputadorPortatil extends Computador{
 		bateria = 0;
 		ligadoTomada = false;
 	}
-	ComputadorPortatil(String entradaMarc, String entradaProg, boolean entradaOnoff, int entradaVol,String nave,int entradaBateria,boolean ligar_na_Tomada){
+	ComputadorPortatil(String entradaMarc, String entradaProg, boolean entradaOnoff, int entradaVol,String nave,int entradaBateria,boolean ligarNaTomada){
 		super(entradaMarc, entradaProg,entradaOnoff, entradaVol);
 		bateria = entradaBateria;
-		ligadoTomada = ligar_na_Tomada;
+		ligadoTomada = ligarNaTomada;
 	}
 	
 	
 	private int bateria;
 	private boolean ligadoTomada;
 	
-
+	public abstract void ligarDesligarTomada();
+	
 	public int getBateria() {
 		return bateria;
 	}

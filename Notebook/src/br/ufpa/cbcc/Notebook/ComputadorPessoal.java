@@ -29,17 +29,8 @@ public class ComputadorPessoal extends Computador{
 	
 	@Override
 	public void ligarDesligar() {
-		if(isLigado()){
-			setLigado(false);
-			System.out.println("O PC foi desligado!!");
-		}
-		else {
-			setLigado(true);
-			System.out.println("O PC foi ligado!!");
-		
-			
-		}
-		
+		setLigado(!isLigado());
+		System.out.println(isLigado() ? "O pc foi desligado!!" : "O PC foi ligado!!");
 	}
 
 	@Override
