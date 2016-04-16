@@ -21,7 +21,7 @@ public class Notebook extends ComputadorPortatil{
 			if((getBateria()>0 || isLigadoTomada())){
 				setLigado(!isLigado());
 				System.out.println(isLigado() ? "O Notebook foi ligado!" : "O Notebook foi desligado!");
-				setBateria(getBateria()-10);
+				setBateria(isLigadoTomada() ? getBateria()-0 : getBateria()-10);
 			}
 			
 		
