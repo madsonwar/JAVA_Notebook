@@ -7,13 +7,14 @@ public class ComputadorPessoal extends Computador{
 	
 	
     ComputadorPessoal(){
-    	
+    	super();
+    	this.navegador = "Desconhecido";
     }
 	
     ComputadorPessoal(String entradaMarc, String entradaProg, boolean entradaOnoff, int entradaVol,String nave){
     	super(entradaMarc,entradaProg,entradaOnoff,entradaVol);
     	
-    	navegador = nave;
+    	this.navegador = nave;
     	
     }
 	
@@ -102,9 +103,17 @@ public class ComputadorPessoal extends Computador{
 		}
 		
 	}
-
+	public void usarNavegador(){
+		if(isLigado()){
+			System.out.println(conectarAInternet()? "Utilizando o Navegador"+navegador:"tentando utilizar o navegador, mas estah sem internet");
+		}
+	}
+	public boolean conectarAInternet(){
+		
+		return true;
+	}
 	public String getNavegador() {
-		return navegador;
+		return this.navegador;
 	}
 
 	public void setNavegador(String navegador) {

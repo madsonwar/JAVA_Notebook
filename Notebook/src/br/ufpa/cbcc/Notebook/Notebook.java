@@ -1,4 +1,5 @@
 package br.ufpa.cbcc.Notebook;
+import javax.swing.JOptionPane;
 
 public class Notebook extends ComputadorPortatil{
 	
@@ -97,7 +98,18 @@ public class Notebook extends ComputadorPortatil{
 
 	public void diminurVolume(int menos) {
 		if(isLigado()){
+			try{
+				if(menos <0){
+					String str = "numero invalido";
+					 throw new IllegalArgumentException ( str );
+				
+				}
+				
+			}
 			
+			catch ( IllegalArgumentException iae ){
+				
+				 JOptionPane.showMessageDialog(null,iae.getMessage(),"Erro",0);}
 			setVolume(getVolume()-menos);
 			System.out.println("O volume foi diminuido:"+getVolume());
 			setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
