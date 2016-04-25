@@ -13,7 +13,10 @@ public class Notebook extends ComputadorPortatil{
 		this.voltagem = entradaVoltagem;
 	
 	}
-	
+	Notebook(Notebook not){
+		
+		this.voltagem = not.voltagem;
+	}
 	private float voltagem;
 	@Override
 	public void ligarDesligar() {

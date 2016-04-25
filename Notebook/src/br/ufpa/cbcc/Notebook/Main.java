@@ -54,9 +54,16 @@ public class Main{
 				((Notebook) pc).printfBateria();
 				break;
 				
+					
+						
+							
+				
 			
 			default:
 				System.exit(0);
+			}
+		}
+	
 				if(pc instanceof ComputadorPessoal){
 					String str2 = JOptionPane.showInputDialog(null,"Escolha uma opção de ComputadorPessoal:\n"
 							+"-1-Ligar desligar "

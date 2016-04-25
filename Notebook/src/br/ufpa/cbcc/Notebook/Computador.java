@@ -25,6 +25,12 @@ public abstract class Computador implements Device{
 		volume = vol;
 		
 	}
+	Computador(Computador comp){
+		this.marca = comp.marca;
+		this.programa = comp.programa;
+		this.ligado = comp.ligado;
+		this.volume = comp.volume;
+	}
 	
 	public  void aumentarVolume(){
 		volume +=1;

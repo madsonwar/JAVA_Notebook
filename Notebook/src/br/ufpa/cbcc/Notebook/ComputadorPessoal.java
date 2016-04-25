@@ -10,7 +10,10 @@ public class ComputadorPessoal extends Computador{
     	super();
     	this.navegador = "Desconhecido";
     }
-	
+    ComputadorPessoal(ComputadorPessoal pc){
+    	super(pc);
+    	this.navegador = pc.navegador;
+    }
     ComputadorPessoal(String entradaMarc, String entradaProg, boolean entradaOnoff, int entradaVol,String nave){
     	super(entradaMarc,entradaProg,entradaOnoff,entradaVol);
     	

@@ -5,6 +5,11 @@ public abstract class ComputadorPortatil extends Computador{
 		bateria = 0;
 		ligadoTomada = false;
 	}
+	ComputadorPortatil(ComputadorPortatil pc){
+		super(pc);
+		this.bateria = pc.bateria;
+		this.ligadoTomada = pc.ligadoTomada;
+	}
 	ComputadorPortatil(String entradaMarc, String entradaProg, boolean entradaOnoff, int entradaVol,String nave,int entradaBateria,boolean ligarNaTomada){
 		super(entradaMarc, entradaProg,entradaOnoff, entradaVol);
 		bateria = entradaBateria;
