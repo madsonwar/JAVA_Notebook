@@ -21,9 +21,11 @@ public class Notebook extends ComputadorPortatil{
 			if((getBateria()>0 || isLigadoTomada())){
 				setLigado(!isLigado());
 				System.out.println(isLigado() ? "O Notebook foi ligado!" : "O Notebook foi desligado!");
-				setBateria(isLigadoTomada() ? getBateria()-0 : getBateria()-10);
+				setBateria(isLigadoTomada() ? getBateria()-0 : getBateria()-10);				
 			}
-			
+			else {
+				System.out.println("Tentando ligar, mas estah sem bateria e a tomada estah desligada!");
+			}
 		
 		
 	}
@@ -33,8 +35,10 @@ public class Notebook extends ComputadorPortatil{
 		
 		if(isLigado()){
 			setVolume(getVolume()+2);
-			System.out.println("O Volume foi aumentado em 2:"+getVolume());
-			setBateria(isLigadoTomada() ? getBateria()-0 : getBateria()-10);
+			System.out.println("O Volume foi aumentado:"+getVolume());
+			setBateria(isLigadoTomada() ? getBateria()-10 : getBateria()-0);
+			setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
+			
 		}
 		else{
 			System.out.println("O Notebook estah desligado!!!");
@@ -46,8 +50,9 @@ public class Notebook extends ComputadorPortatil{
 		
 		if(isLigado()){
 			setVolume(getVolume()-2);
-			System.out.println("O Volume foi diminuido em 2:"+getVolume());
-			setBateria(isLigadoTomada() ? getBateria()-0 : getBateria()-10);
+			System.out.println("O Volume foi diminuido:"+getVolume());
+			setBateria(isLigadoTomada() ? getBateria()-10 : getBateria()-0);
+			setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 		}
 		else{
 			System.out.println("O Notebook estah desligado!!!");
@@ -57,29 +62,32 @@ public class Notebook extends ComputadorPortatil{
 	@Override
 	public void printfMarca() {
 		System.out.println(isLigado()? "A marca do PC eh:"+getMarca() : "O Notebook estah desligado!");
-		
+		setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
+		setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 	}
 
 	@Override
 	public void executarPrograma() {
 		System.out.println(isLigado()? "O programa"+getPrograma()+"esta executando":"O Notebook estah desligado!");
-		
+		setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
+		setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 		
 	}
 
 	@Override
 	public void printfVersaoDaBios() {
 		System.out.println(isLigado()? "A versão da bios eh:"+getVersaoDaBios():"O Notebook estah desligado!!");
-		
+		setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
+		setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 	}
 
-	@Override
 	public void aumentarVolume(int mais) {
 		if(isLigado()){
 			
 			setVolume(getVolume()+mais);
 			System.out.println("O volume foi aumentado:"+getVolume());
-		
+			setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
+			setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 		}
 		else{
 			System.out.println("O PC estah Desligado!!");
@@ -87,24 +95,24 @@ public class Notebook extends ComputadorPortatil{
 		
 	}
 
-	@Override
 	public void diminurVolume(int menos) {
 		if(isLigado()){
 			
 			setVolume(getVolume()-menos);
 			System.out.println("O volume foi diminuido:"+getVolume());
-		
+			setBateria(isLigadoTomada()? getBateria()-10:getBateria()-0);
+			setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 		}
 		else{
 			System.out.println("O PC estah Desligado!!");
 		}		
 	}
 
-	@Override
 	public void ligarDesligarTomada() {
 		
 		setLigadoTomada(isLigadoTomada() ? false:true); 
-		setBateria(isLigadoTomada() ? (getBateria()+40) : 0);
+		setBateria(isLigadoTomada() ? (getBateria()+40) : getBateria());
+		setLigado(isLigadoTomada()&& getBateria()<=0? false : isLigado());
 		
 	}
 	public float getVoltagem() {
@@ -114,6 +122,8 @@ public class Notebook extends ComputadorPortatil{
 		this.voltagem = voltagem;
 	}
 
-	
+	public void printfBateria(){
+		System.out.println("A bateria estah em:"+getBateria());
+	}
 
 }
