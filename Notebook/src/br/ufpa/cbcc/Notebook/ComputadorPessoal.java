@@ -21,9 +21,15 @@ public class ComputadorPessoal extends Computador{
 	
 	
 	public  void aumentarVolume(int mais){
+		if(isLigado()){
 		
-		setVolume(getVolume()+mais);
-		System.out.println("O volume foi aumentado:"+getVolume());
+			setVolume(getVolume()+mais);
+			System.out.println("O volume foi aumentado:"+getVolume());
+		
+		}
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}
 	}
 	
 	
@@ -35,31 +41,49 @@ public class ComputadorPessoal extends Computador{
 
 	@Override
 	public void aumentarVolume() {
-		// TODO Auto-generated method stub
+		if(isLigado()){
+			setVolume(getVolume()+3);
+			System.out.println("O volume foi aumentado em:"+getVolume());
+		}
+		
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}
 		
 	}
 
 	@Override
 	public void diminuirVolume() {
-		// TODO Auto-generated method stub
+		if(isLigado()){
+			setVolume(getVolume()-3);
+			System.out.println("O volume foi diminuido em:"+getVolume());
+		}
+		
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}
 		
 	}
 
 	@Override
 	public void printfMarca() {
+		System.out.println(isLigado()? 
+				"A marca do PC eh:"+getMarca() 
+				: "O PC estah desligado");
 		
 		
 	}
 
 	@Override
 	public void executarPrograma() {
-		// TODO Auto-generated method stub
+		System.out.println(isLigado()? "O programa:"+getPrograma()+"Estah sendo executado" : "O PC estah desligado!");
+		
 		
 	}
 
 	@Override
 	public void printfVersaoDaBios() {
-		// TODO Auto-generated method stub
+		System.out.println(isLigado()? "A versao da bios eh:"+getVersaoDaBios():"O PC estah desligado!");
 		
 	}
 
@@ -67,7 +91,15 @@ public class ComputadorPessoal extends Computador{
 
 	@Override
 	public void diminurVolume(int menos) {
-		// TODO Auto-generated method stub
+		if(isLigado()){
+			
+			setVolume(getVolume()-menos);
+			System.out.println("O volume foi diminuido:"+getVolume());
+		
+		}
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}
 		
 	}
 

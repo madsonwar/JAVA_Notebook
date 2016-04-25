@@ -32,16 +32,8 @@ public abstract class Computador implements Device{
 	}
 	
 	public void ligarDesligar(){
-		if(ligado == true){
-			ligado = false;
-			System.out.println("O aparelho foi desligado!!");
-		}
-		else {
-			ligado = true;
-			System.out.println("O aparelho foi ligado!!");
-		
-			
-		}
+		ligado=!ligado;
+		System.out.println(ligado? "O Computador foi ligado!":"O Computador foi desligado!");
 	}
 	
 	

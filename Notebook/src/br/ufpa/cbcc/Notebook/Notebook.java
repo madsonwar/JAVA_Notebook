@@ -56,37 +56,52 @@ public class Notebook extends ComputadorPortatil{
 
 	@Override
 	public void printfMarca() {
-		// TODO Auto-generated method stub
+		System.out.println(isLigado()? "A marca do PC eh:"+getMarca() : "O Notebook estah desligado!");
 		
 	}
 
 	@Override
 	public void executarPrograma() {
-		// TODO Auto-generated method stub
+		System.out.println(isLigado()? "O programa"+getPrograma()+"esta executando":"O Notebook estah desligado!");
+		
 		
 	}
 
 	@Override
 	public void printfVersaoDaBios() {
-		// TODO Auto-generated method stub
+		System.out.println(isLigado()? "A versão da bios eh:"+getVersaoDaBios():"O Notebook estah desligado!!");
 		
 	}
 
 	@Override
 	public void aumentarVolume(int mais) {
-		// TODO Auto-generated method stub
+		if(isLigado()){
+			
+			setVolume(getVolume()+mais);
+			System.out.println("O volume foi aumentado:"+getVolume());
+		
+		}
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}
 		
 	}
 
 	@Override
 	public void diminurVolume(int menos) {
-		// TODO Auto-generated method stub
+		if(isLigado()){
+			
+			setVolume(getVolume()-menos);
+			System.out.println("O volume foi diminuido:"+getVolume());
 		
+		}
+		else{
+			System.out.println("O PC estah Desligado!!");
+		}		
 	}
 
 	@Override
 	public void ligarDesligarTomada() {
-		// TODO Auto-generated method stub
 		
 		setLigadoTomada(isLigadoTomada() ? false:true); 
 		setBateria(isLigadoTomada() ? (getBateria()+40) : 0);
