@@ -1,12 +1,12 @@
 package br.ufpa.cbcc.Notebook;
 
-public abstract class Computador implements Device{
+public abstract class Computador implements Device,Autenticavel{
 	private int versaoDaBios;
 	private String programa;
 	private boolean ligado;
 	private int volume;
 	private String marca;
-	
+	private Data dataDeFabricacao;
 	public abstract void executarPrograma();
 	public abstract void printfVersaoDaBios();
 	
@@ -73,6 +73,17 @@ public abstract class Computador implements Device{
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	
+	public Data getDataDeFabricacao() {
+		return dataDeFabricacao;
+	}
+	public void setDataDeFabricacao(Data dataDeFabricacao) {
+		this.dataDeFabricacao = dataDeFabricacao;
+	}
+	public void logar(){
+		
+	}
+	public void desLogar(){
+		
+	}
 
 }

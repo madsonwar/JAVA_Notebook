@@ -1,6 +1,4 @@
 package br.ufpa.cbcc.Notebook;
-import java.nio.charset.StandardCharsets;
-
 import javax.swing.JOptionPane;
 
 public class Main{
@@ -91,4 +89,4 @@ public class Main{
 		}
 	}
 }
-		
+}		
