@@ -7,8 +7,11 @@ public abstract class Computador implements Device,Autenticavel{
 	private int volume;
 	private String marca;
 	private Data dataDeFabricacao;
+	private String usuario;
+	private int senha = 12345;
 	public abstract void executarPrograma();
 	public abstract void printfVersaoDaBios();
+	
 	
 	Computador(){
 		marca = "desconhecido";
@@ -81,9 +84,22 @@ public abstract class Computador implements Device,Autenticavel{
 	}
 	public void logar(){
 		
+		
 	}
 	public void desLogar(){
 		
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	public int getSenha() {
+		return senha;
+	}
+	public void setSenha(int senha) {
+		this.senha = senha;
 	}
 
 }
