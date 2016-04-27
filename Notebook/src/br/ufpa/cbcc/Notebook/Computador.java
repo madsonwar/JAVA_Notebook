@@ -9,6 +9,7 @@ public abstract class Computador implements Device,Autenticavel{
 	private Data dataDeFabricacao;
 	private String usuario;
 	private int senha = 12345;
+	private boolean logado;
 	public abstract void executarPrograma();
 	public abstract void printfVersaoDaBios();
 	
@@ -82,12 +83,13 @@ public abstract class Computador implements Device,Autenticavel{
 	public void setDataDeFabricacao(Data dataDeFabricacao) {
 		this.dataDeFabricacao = dataDeFabricacao;
 	}
-	public void logar(){
-		
-		
+	public void logar(String entradaUsuario,int entradaSenha){
+		System.out.println((this.usuario==entradaUsuario)&&(this.senha==entradaSenha)? "O usuario foi logado":"Usuario ou Senha invalidos!!");
+		setLogado((this.usuario==entradaUsuario)&&(this.senha==entradaSenha)? true:false);
 	}
 	public void desLogar(){
-		
+		setLogado(false);
+		System.out.println("Deslogando o usuario...");
 	}
 	public String getUsuario() {
 		return usuario;
@@ -100,6 +102,12 @@ public abstract class Computador implements Device,Autenticavel{
 	}
 	public void setSenha(int senha) {
 		this.senha = senha;
+	}
+	public boolean isLogado() {
+		return logado;
+	}
+	public void setLogado(boolean logado) {
+		this.logado = logado;
 	}
 
 }
