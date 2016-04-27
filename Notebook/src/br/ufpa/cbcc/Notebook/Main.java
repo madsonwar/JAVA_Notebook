@@ -14,9 +14,11 @@ public class Main{
 		switch ( op ){
 		case 1:
 			pc = new Notebook();
+			menu( pc);
 			break;
 		case 2:
 			pc = new ComputadorPessoal();
+			menu( pc);
 			break;
 		
 		default:
@@ -30,7 +32,7 @@ public class Main{
   
 	}
 	
-	void menu(Computador pc){
+	static void menu(Computador pc){
 		if(pc instanceof Notebook){
 			String str = JOptionPane.showInputDialog(null,"Escolha uma opção de Nootebook:\n"
 					+"-1-Ligar desligar "
@@ -63,13 +65,13 @@ public class Main{
 		}
 	
 				if(pc instanceof ComputadorPessoal){
-					String str2 = JOptionPane.showInputDialog(null,"Escolha uma opção de ComputadorPessoal:\n"
+					String str = JOptionPane.showInputDialog(null,"Escolha uma opção de ComputadorPessoal:\n"
 							+"-1-Ligar desligar "
 							+"-2-Aumentar volume"
 							+"-2-Diminuir volume"
 							+"-3-Carga da Bateria");
-					int op2 = Integer.parseInt( str2.trim() );
-					switch ( op2 ){
+					int op = Integer.parseInt( str.trim() );
+					switch ( op ){
 					case 1:
 						pc.ligarDesligar();
 						break;
@@ -85,6 +87,7 @@ public class Main{
 						
 					
 					default:
+						
 						System.exit(0);
 		}
 	}
