@@ -3,11 +3,56 @@ import javax.swing.JOptionPane;
 
 public class Main{
 	 public static Computador pc;
-
+	 public static  Computador[]maquinas=new Computador[10];
+	 
 	public static void main(String[] args){
 		
 		
-		String str = JOptionPane.showInputDialog(null,"Escolha um PC ou Notebook:\n"
+		{
+		
+		for(int a=0; a<=9; a++){
+			String str = JOptionPane.showInputDialog(null,"Escolha dez maquinas entre PC's ou Notebook's:\n"
+					+"Notebook-1-\n"
+					+"Computador pessoal -2-\n");
+			int op = Integer.parseInt( str.trim() );
+			switch (op){
+			case 1:
+				maquinas[a] = new Notebook();
+			case 2:
+				maquinas[a] = new ComputadorPessoal();
+			}
+		
+			
+		}
+		
+		}}
+			
+			static void menu(Computador[] maquinas){
+				for(int a=0; a<=9; a++){
+				
+					
+					
+					
+					maquinas[a].ligarDesligar();
+					maquinas[a].aumentarVolume();
+					maquinas[a].diminuirVolume();
+				
+					
+					if(maquinas[a] instanceof Notebook){
+						((Notebook) maquinas[a]).printfBateria();
+					}
+					else if(maquinas[a] instanceof ComputadorPessoal){
+						((ComputadorPessoal) maquinas[a]).usarNavegador();
+					}
+						
+							
+							
+									
+						
+					
+					
+		
+		/*String str = JOptionPane.showInputDialog(null,"Escolha um PC ou Notebook:\n"
 				+"Notebook-1-\n"
 				+"Computador pessoal -2-\n");
 		int op = Integer.parseInt( str.trim() );
@@ -91,5 +136,6 @@ public class Main{
 						System.exit(0);
 		}
 	}
+}*/
 }
-}		
+		}}		

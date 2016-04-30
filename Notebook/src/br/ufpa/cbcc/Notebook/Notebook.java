@@ -15,7 +15,7 @@ public class Notebook extends ComputadorPortatil{
 	}
 	Notebook(Notebook not){
 		
-		super((Computador)not);
+		super(not);
 		
 		this.voltagem = not.voltagem;
 	}

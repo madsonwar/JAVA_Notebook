@@ -1,6 +1,6 @@
 package br.ufpa.cbcc.Notebook;
 
-public abstract class Computador implements Device,Autenticavel{
+public abstract class Computador implements Device/*,Autenticavel*/{
 	private int versaoDaBios;
 	private String programa;
 	private boolean ligado;
